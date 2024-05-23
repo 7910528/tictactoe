@@ -2,22 +2,32 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tictactoe.tictactoe.controller.TicTacToeController">
+<BorderPane prefHeight="600.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tictactoe.tictactoe.controller.TicTacToeController">
 
     <!-- Main Menu -->
     <top>
-        <VBox alignment="CENTER" spacing="20.0" style="-fx-padding: 10;">
-            <Button onAction="#startNewGame" text="New Game" />
-            <Button onAction="#exitGame" text="Exit" />
+        <VBox alignment="CENTER" prefHeight="110.0" prefWidth="450.0" spacing="20.0" style="-fx-padding: 10;">
+            <Button onAction="#startNewGame" prefHeight="30.0" prefWidth="100.0" text="New Game">
+            <font>
+               <Font size="14.0" />
+            </font></Button>
+            <Button onAction="#exitGame" prefHeight="30.0" prefWidth="100.0" text="Exit">
+            <font>
+               <Font size="14.0" />
+            </font></Button>
         </VBox>
     </top>
 
     <!-- Game Board -->
     <center>
         <VBox alignment="CENTER" spacing="10.0">
-            <Label fx:id="currentPlayerLabel" text="Player 1's turn" />
-            <GridPane fx:id="boardGrid" gridLinesVisible="true">
+            <Label fx:id="currentPlayerLabel" prefHeight="20.0" prefWidth="100.0" text="Player 1's turn" textAlignment="CENTER">
+            <font>
+               <Font size="14.0" />
+            </font></Label>
+            <GridPane fx:id="boardGrid" gridLinesVisible="true" prefHeight="450.0" prefWidth="450.0">
                 <columnConstraints>
                     <ColumnConstraints percentWidth="33.33" />
                     <ColumnConstraints percentWidth="33.33" />
@@ -29,15 +39,15 @@
                     <RowConstraints percentHeight="33.33" />
                 </rowConstraints>
                 <children>
-                    <Button onAction="#handleCellClick" style="-fx-font-size: 24; -fx-min-width: 100; -fx-min-height: 100;" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                    <Button onAction="#handleCellClick" style="-fx-font-size: 24; -fx-min-width: 100; -fx-min-height: 100;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                    <Button onAction="#handleCellClick" style="-fx-font-size: 24; -fx-min-width: 100; -fx-min-height: 100;" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-                    <Button onAction="#handleCellClick" style="-fx-font-size: 24; -fx-min-width: 100; -fx-min-height: 100;" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                    <Button onAction="#handleCellClick" style="-fx-font-size: 24; -fx-min-width: 100; -fx-min-height: 100;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                    <Button onAction="#handleCellClick" style="-fx-font-size: 24; -fx-min-width: 100; -fx-min-height: 100;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                    <Button onAction="#handleCellClick" style="-fx-font-size: 24; -fx-min-width: 100; -fx-min-height: 100;" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                    <Button onAction="#handleCellClick" style="-fx-font-size: 24; -fx-min-width: 100; -fx-min-height: 100;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                    <Button onAction="#handleCellClick" style="-fx-font-size: 24; -fx-min-width: 100; -fx-min-height: 100;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                    <Button onAction="#handleCellClick" prefHeight="150.0" prefWidth="150.0" style="-fx-font-size: 24; -fx-min-width: 100; -fx-min-height: 100;" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <Button onAction="#handleCellClick" prefHeight="150.0" prefWidth="150.0" style="-fx-font-size: 24; -fx-min-width: 100; -fx-min-height: 100;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <Button onAction="#handleCellClick" prefHeight="150.0" prefWidth="150.0" style="-fx-font-size: 24; -fx-min-width: 100; -fx-min-height: 100;" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                    <Button onAction="#handleCellClick" prefHeight="150.0" prefWidth="150.0" style="-fx-font-size: 24; -fx-min-width: 100; -fx-min-height: 100;" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <Button onAction="#handleCellClick" prefHeight="150.0" prefWidth="150.0" style="-fx-font-size: 24; -fx-min-width: 100; -fx-min-height: 100;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <Button onAction="#handleCellClick" prefHeight="150.0" prefWidth="150.0" style="-fx-font-size: 24; -fx-min-width: 100; -fx-min-height: 100;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                    <Button onAction="#handleCellClick" prefHeight="150.0" prefWidth="150.0" style="-fx-font-size: 24; -fx-min-width: 100; -fx-min-height: 100;" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <Button onAction="#handleCellClick" prefHeight="150.0" prefWidth="150.0" style="-fx-font-size: 24; -fx-min-width: 100; -fx-min-height: 100;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <Button onAction="#handleCellClick" prefHeight="150.0" prefWidth="150.0" style="-fx-font-size: 24; -fx-min-width: 100; -fx-min-height: 100;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                 </children>
             </GridPane>
         </VBox>
