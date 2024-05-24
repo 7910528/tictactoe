@@ -7,6 +7,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
+/**
+ * Controller for the Tic Tac Toe game.
+ */
 public class TicTacToeController
 {
     @FXML
@@ -14,17 +17,29 @@ public class TicTacToeController
     @FXML
     private GridPane boardGrid;
     private Game game;
+    /**
+     * Initializes the controller and starts a new game.
+     */
     @FXML
     public void initialize()
     {
         startNewGame();
     }
+    /**
+     * Handles a cell click event.
+     *
+     * @param event the event triggered by clicking a cell
+     */
     @FXML
     protected void handleCellClick(javafx.event.ActionEvent event)
     {
         Button clickedButton = (Button) event.getSource();
         Integer row = GridPane.getRowIndex(clickedButton);
         Integer col = GridPane.getColumnIndex(clickedButton);
+        if (row == null || col == null)
+        {
+            return;
+        }
         if (clickedButton.getText().isEmpty() && game.makeMove(row, col))
         {
             clickedButton.setText(String.valueOf(game.getCurrentPlayer().getSymbol()));
@@ -45,6 +60,9 @@ public class TicTacToeController
             }
         }
     }
+    /**
+     * Starts a new game.
+     */
     @FXML
     private void startNewGame()
     {
@@ -59,15 +77,24 @@ public class TicTacToeController
         });
         updateCurrentPlayerLabel();
     }
+    /**
+     * Exits the game.
+     */
     @FXML
     private void exitGame()
     {
         System.exit(0);
     }
+    /**
+     * Updates the current player label.
+     */
     private void updateCurrentPlayerLabel()
     {
         currentPlayerLabel.setText(game.getCurrentPlayer().getName() + "'s turn");
     }
+    /**
+     * Disables the game board.
+     */
     private void disableBoard()
     {
         boardGrid.getChildren().filtered(node -> node instanceof Button).forEach(node -> node.setDisable(true));
